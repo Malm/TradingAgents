@@ -24,20 +24,30 @@ pip install -r requirements.txt
 
 ### 2. Configure API Keys
 
-Create `.env` file in project root (already created):
+**RECOMMENDED: Use OpenRouter** (easiest + cheapest)
+
+Create `.env` file in project root:
 
 ```bash
 # Alpha Vantage API (for market data)
 ALPHA_VANTAGE_API_KEY=6ZLKX5ZXMJHBMXQB
 
-# Anthropic API (for Claude LLM) - REQUIRED
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
+# OpenRouter API (for Claude via OpenRouter)
+OPENAI_API_KEY=your_openrouter_api_key_here
 ```
 
-**Get your Anthropic API key:**
-- Go to: https://console.anthropic.com/settings/keys
-- Create new API key
-- Add to `.env` file above
+**Get your OpenRouter API key:**
+1. Go to: https://openrouter.ai/
+2. Sign up + add $5-10 credits
+3. Settings → Keys → Create Key
+4. Add to `.env` file above
+
+**Alternative: Direct Anthropic API**
+```bash
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+```
+- Get key: https://console.anthropic.com/settings/keys
+- Change config: `"llm_provider": "anthropic"`
 
 ### 3. Test with US Stock
 
@@ -94,8 +104,9 @@ Alpha Vantage supports Stockholm Stock Exchange stocks with `.ST` suffix:
 5. Add Notion logging
 6. Add Telegram notifications
 
-## 📊 Model Costs (Anthropic Claude Sonnet 4)
+## 📊 Model Costs (Claude Sonnet 4 via OpenRouter)
 
+**OpenRouter pricing (same as direct Anthropic):**
 - **Input**: ~$3 per million tokens
 - **Output**: ~$15 per million tokens
 
@@ -106,4 +117,8 @@ Alpha Vantage supports Stockholm Stock Exchange stocks with `.ST` suffix:
 
 With 10 stocks: **~$2-3/day** (~60 SEK/dag)
 
-Much cheaper than OpenAI o1-preview/gpt-4o!
+**Why OpenRouter?**
+- One API for all models (Claude, GPT-4, etc.)
+- Easy to switch models without code changes
+- Simple billing (one account, one invoice)
+- No monthly subscription needed
