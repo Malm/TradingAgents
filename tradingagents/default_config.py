@@ -9,10 +9,10 @@ DEFAULT_CONFIG = {
         "dataflows/data_cache",
     ),
     # LLM settings
-    "llm_provider": "openai",
-    "deep_think_llm": "o4-mini",
-    "quick_think_llm": "gpt-4o-mini",
-    "backend_url": "https://api.openai.com/v1",
+    "llm_provider": "anthropic",
+    "deep_think_llm": "claude-sonnet-4-20250514",
+    "quick_think_llm": "claude-sonnet-4-20250514",
+    "backend_url": "https://api.anthropic.com/v1",
     # Debate and discussion settings
     "max_debate_rounds": 1,
     "max_risk_discuss_rounds": 1,
