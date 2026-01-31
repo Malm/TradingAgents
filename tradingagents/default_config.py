@@ -10,8 +10,12 @@ DEFAULT_CONFIG = {
     ),
     # LLM settings
     "llm_provider": "openrouter",
-    "deep_think_llm": "anthropic/claude-sonnet-4",
-    "quick_think_llm": "anthropic/claude-sonnet-4",
+    # Budget option: Use Gemini Flash (40x cheaper!)
+    "deep_think_llm": "google/gemini-2.0-flash-exp:free",
+    "quick_think_llm": "google/gemini-2.0-flash-exp:free",
+    # Premium option: Claude Sonnet 4 (best quality, expensive)
+    # "deep_think_llm": "anthropic/claude-sonnet-4",
+    # "quick_think_llm": "anthropic/claude-sonnet-4",
     "backend_url": "https://openrouter.ai/api/v1",
     # Debate and discussion settings
     "max_debate_rounds": 1,
